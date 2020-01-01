@@ -8,7 +8,9 @@
 int main()
 {
 	clock_t start, end;
-	sleep(30);
+	//sleep(30);
+	fscanf(stdin," ");
+	printf("start test\n");
 	start = clock();
 	int size=32768;
 	int* m=(int*)malloc(size*sizeof(int));
@@ -21,6 +23,6 @@ int main()
 		sleep(1);
 	}
 	end = clock();
-	printf("%ld msec",end-start);
+	printf("%ld msec\n",end-start);
 	
 }
