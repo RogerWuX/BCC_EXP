@@ -3,26 +3,26 @@
 #include<time.h>
 #include<stdlib.h>
 
-
+#define array_size 1024
 
 int main()
 {
+	int stage=0;
+	char buf[64];
+	fscanf(stdin,"%s",buf);
+	printf("%d\n",stage++);
+	fscanf(stdin,"%s",buf);
+	printf("%d\n",stage++);
 	clock_t start, end;
-	//sleep(30);
-	fscanf(stdin," ");
-	printf("start test\n");
+	int* m=(int*)malloc(array_size*sizeof(int));	
+	fscanf(stdin,"%s",buf);
+	printf("%d\n",stage++);
 	start = clock();
-	int size=32768;
-	int* m=(int*)malloc(size*sizeof(int));
-	for(int j=0;j<4;++j)
+	for(int i=0;i<array_size;++i)
 	{
-		for(int i=j*size/4;i<size/4;++i)
-		{
-			m[i]=i;
-		}
-		sleep(1);
+		m[i]=i;
 	}
 	end = clock();
-	printf("%ld msec\n",end-start);
+	printf("execution time %ld msec\n",end-start);
 	
 }
